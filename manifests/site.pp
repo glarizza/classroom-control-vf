@@ -39,6 +39,9 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+  ## Declare the skeleton class (Lab 11.1)
+  include memcached
+  
   ## Declare the skeleton class (Lab 9.3)
   include skeleton
   
