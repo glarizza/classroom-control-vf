@@ -42,7 +42,7 @@ node default {
   ## Lab 13.2
   if $::virtual != 'physical' {
     $vm = capitalize($::virtual)
-    notify { "Looks like I'm on: ${::vm}": }
+    notify { "Looks like I'm on: ${vm}": }
   }
 
   ## Declare the nginx class (Lab 11.2)
