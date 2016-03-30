@@ -58,11 +58,11 @@ class nginx {
     enable => true,
   }
   
-  file { '/var/www/':
+  file { $docroot:
     ensure => directory,
   }
   
-  file { '/var/www/index.html':
+  file { "${docroot}/index.html":
     ensure => file,
     source => 'puppet:///modules/nginx/index.html',
   }
