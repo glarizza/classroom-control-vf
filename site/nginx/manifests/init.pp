@@ -30,7 +30,7 @@ class nginx {
   
   File {
     owner => $owner,
-    group => $group
+    group => $group,
     mode  => '0644',
     require => Package['nginx'],
     notify  => Service['nginx'],
