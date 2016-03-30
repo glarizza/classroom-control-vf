@@ -16,7 +16,7 @@ class nginx {
       $confdir = 'C:/ProgramData/nginx'
       $logdir = 'C:/ProgramData/nginx/logs'
     }
-    default { fail("OS Family ${::osfamily} is not supported with this nginx module") }
+    default: { fail("OS Family ${::osfamily} is not supported with this nginx module") }
   }
 
   ## Because Redhat and Debian are different here, we can't specify the user of
