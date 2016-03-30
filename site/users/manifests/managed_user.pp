@@ -13,6 +13,11 @@ define users::managed_user (
     mode   => '0644',
   }
 
+  $real_home = $home ? {
+    undef   => "/home/${username}"
+    default => $home
+  }
+
   user { $title:
     ensure => present,
     uid    => $uid,
