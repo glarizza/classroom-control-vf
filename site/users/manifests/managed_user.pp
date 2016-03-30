@@ -5,17 +5,12 @@ define users::managed_user (
   $username  = $title,
   $uid       = undef,
   $groupname = $title,
-  $homedir   = "/home/${username}",
+  $homedir   = "/home/${title}",
 ) {
   File {
     owner  => $username,
     group  => $groupname,
     mode   => '0644',
-  }
-
-  $real_home = $home ? {
-    undef   => "/home/${username}",
-    default => $home
   }
 
   user { $title:
