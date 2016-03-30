@@ -39,6 +39,12 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+  ## Lab 13.2
+  if $::virtual != 'physical' {
+    $vm = capitalize($::virtual)
+    notify { "Looks like I'm on: ${::virtual}": }
+  }
+
   ## Declare the nginx class (Lab 11.2)
   include nginx
   
