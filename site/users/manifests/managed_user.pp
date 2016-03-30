@@ -13,14 +13,15 @@ define users::managed_user (
     mode   => '0644',
   }
 
-  user { $username:
+  user { $title:
     ensure => present,
     uid    => $uid,
     gid    => $groupname,
     home   => $homedir,
+    name   => $username,
   }
 
-  group { $username:
+  group { $title:
     ensure => present,
     name   => $groupname,
   }
