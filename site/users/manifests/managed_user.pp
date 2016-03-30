@@ -14,7 +14,7 @@ define users::managed_user (
   }
 
   $real_home = $home ? {
-    undef   => "/home/${username}"
+    undef   => "/home/${username}",
     default => $home
   }
 
