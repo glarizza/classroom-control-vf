@@ -49,7 +49,7 @@ node default {
   include users::admins
 
   ## Declare the nginx class (Lab 11.2)
-  include nginx
+  #include nginx
   
   ## Declare the skeleton class (Lab 11.1)
   include memcached
