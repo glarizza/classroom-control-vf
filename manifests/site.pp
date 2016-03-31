@@ -49,6 +49,9 @@ node default {
     notify { "Looks like I'm on: ${vm}": }
   }
 
+  ## Capstone
+  include profile::wordpress
+
   ## Declare the nginx class (Lab 15.7)
   include users::admins
 
