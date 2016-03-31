@@ -1,6 +1,12 @@
 class nginx (
-  $root = 'nothing',
-)  {
+  $package = $nginx::params::package,
+  $owner   = $nginx::params::owner,
+  $group   = $nginx::params::group,
+  $confdir = $nginx::params::confdir,
+  $logdir  = $nginx::params::logdir,
+  $docroot = $nginx::params::docroot,
+  $root    = $nginx::params::root,
+) inherits nginx::params {
   case $::osfamily {
     'redhat', 'debian': {
       $package = 'nginx'
