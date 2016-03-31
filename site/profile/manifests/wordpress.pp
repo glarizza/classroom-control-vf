@@ -15,6 +15,7 @@ class profile::wordpress {
 
   ## Apache VHost Config
   include apache
+  include apache::mod::php
   apache::vhost { $::fqdn:
     port     => '80',
     priority => '00',
