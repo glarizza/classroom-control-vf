@@ -39,6 +39,10 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+  ## Lab 17.1
+  $message = hiera('message')
+  notify { "The Hiera message is: ${message}": }
+  
   ## Lab 13.2
   if $::virtual != 'physical' {
     $vm = capitalize($::virtual)
