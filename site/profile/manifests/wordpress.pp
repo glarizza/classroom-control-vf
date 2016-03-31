@@ -2,7 +2,10 @@
 
 class profile::wordpress {
   ## Mysql Server
-  include mysql::server
+  class { 'mysql::server':
+    root_password => 'puppetlabs',
+  }
+
   class { 'mysql::bindings':
     php_enable => true,
   }
